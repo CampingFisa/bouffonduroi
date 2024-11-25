@@ -1,1 +1,28 @@
 /* You can add global styles to this file, and also import other style files */
+* {
+  font-family: 'inter', sans-serif;
+  background: #FFFDF8;
+}
+
+.image-button {
+  border: none;
+  background: none;
+  padding: 0;
+  cursor: pointer; /* Change le curseur au survol */
+}
+
+.image-button img {
+  display: block; /* Évite les espaces blancs autour de l'image */
+  width: 100%;
+  height: auto;
+}
+
+.bg-battleshiep-gray-light {
+  background: #D4DBD0;
+  //opacity: 0.1;
+}
+
+h1 {
+  font-size: 24px;
+  margin: 4px;
+}
