@@ -1,0 +1,17 @@
+<div class="card">
+  <div class="icon-wrapper">
+    <img [src]="gameStatus.playerIcon" alt="Player Icon" class="icon" />
+    <span class="days">{{ timeAgo }}</span>
+  </div>
+  <div class="info">
+    <h3 class="name">{{ gameStatus.playerName }}</h3>
+    <div class="score">{{ gameStatus.myScore }} - {{ gameStatus.theirScore }}</div>
+  </div>
+  <button class="play-button"
+          [class.disabled]="!gameStatus.isMyTurn && !gameStatus.isFinished"
+          [disabled]="!gameStatus.isMyTurn && !gameStatus.isFinished">
+    {{ playButtonText }}
+  </button>
+</div>
+
+

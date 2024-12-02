@@ -3,6 +3,26 @@
   <div>
     <app-header/>
 <!--    Blabla de la page-->
+    <div id="currentGame">
+
+    </div>
+    <div id="OtherBattles">
+      <h3>AUTRES BATAILLES</h3>
+      <div class="OtherGameDiv">
+        <app-game-status [gameStatus]="NicoGame"/>
+        <app-game-status [gameStatus]="MaxouGame"/>
+        <app-game-status [gameStatus]="PapitoGame"/>
+      </div>
+    </div>
+    <div id="DailyQuests">
+
+    </div>
+    <div id="WaitingAdverse">
+
+    </div>
+    <div id="WarHistory">
+
+    </div>
   </div>
   <div>
 <!--    Collé à droite avec une largeur de 80px -->
