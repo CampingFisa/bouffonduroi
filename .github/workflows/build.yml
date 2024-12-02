@@ -13,14 +13,16 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Setup JDK
-        uses: actions/setup-java@v4
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
         with:
-          java-version: '21'
-          distribution: 'temurin'
+          node-version: '18'  # Utilisez la même version que dans votre Dockerfile
 
-      - name: Build with Maven
-        run: mvn clean package
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build Angular app
+        run: npm run build
 
       - name: Build Docker image
         run: |
@@ -31,7 +33,6 @@ jobs:
       - name: Log in to Docker registry
         run: echo "t" | docker login registry.mathieu-symphorien.fr --username "t" --password-stdin
 
-      - name: Tag and Push Docker image
+      - name: Push Docker image
         run: |
-          docker tag registry.mathieu-symphorien.fr/bouffonduroi-jesterquiz:latest registry.mathieu-symphorien.fr/bouffonduroi-jesterquiz:latest
           docker push registry.mathieu-symphorien.fr/bouffonduroi-jesterquiz:latest
