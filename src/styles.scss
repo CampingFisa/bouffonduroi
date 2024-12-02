@@ -3,6 +3,10 @@
   font-family: 'inter', sans-serif;
   background: #FFFDF8;
 }
+body{
+  padding: 0;
+  margin: 0;
+}
 
 :root {
   --accentuated-blue: #274562;
@@ -47,4 +51,5 @@ h1 {
 
 h3 {
   font-size: 20px;
+  padding: 2px;
 }

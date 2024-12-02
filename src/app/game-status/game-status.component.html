@@ -1,4 +1,5 @@
-<div class="card">
+<div class="card"
+     [class.disabled]="!gameStatus.isMyTurn || gameStatus.isFinished">
   <div class="icon-wrapper">
     <img [src]="gameStatus.playerIcon" alt="Player Icon" class="icon" />
     <span class="days">{{ timeAgo }}</span>
@@ -8,8 +9,8 @@
     <div class="score">{{ gameStatus.myScore }} - {{ gameStatus.theirScore }}</div>
   </div>
   <button class="play-button"
-          [class.disabled]="!gameStatus.isMyTurn && !gameStatus.isFinished"
-          [disabled]="!gameStatus.isMyTurn && !gameStatus.isFinished">
+          [class.disabled]="!gameStatus.isMyTurn">
+<!--          [disabled]="!gameStatus.isMyTurn">-->
     {{ playButtonText }}
   </button>
 </div>

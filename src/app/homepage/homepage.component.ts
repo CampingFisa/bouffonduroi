@@ -1,9 +1,10 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {HeaderComponent} from '../header/header.component';
 import {FooterComponent} from '../footer/footer.component';
 import {PanelAmisComponent} from '../panel-amis/panel-amis.component';
-import {GameStatusComponent} from '../game-status/game-status.component';
 import {GameStatus} from '../models/game-status.model';
+import {GameService} from '../services/game.service';
+import {GameStatusComponent} from '../game-status/game-status.component';
 
 @Component({
   selector: 'app-homepage',
@@ -17,32 +18,25 @@ import {GameStatus} from '../models/game-status.model';
   templateUrl: './homepage.component.html',
   styleUrl: './homepage.component.scss'
 })
-export class HomepageComponent {
-  MaxouGame: GameStatus = {
-    lastPlayed: new Date(),
-    playerIcon: 'assets/img/knight.png',
-    playerName: "Maxou",
-    myScore: 5,
-    theirScore: 4,
-    isMyTurn: true,
-    isFinished: false
-  };
-  NicoGame: GameStatus = {
-    lastPlayed: new Date(),
-    playerIcon: 'assets/img/farmer.png',
-    playerName: "Nico",
-    myScore: 5,
-    theirScore: 4,
-    isMyTurn: true,
-    isFinished: false
-  };
-  PapitoGame: GameStatus = {
-    lastPlayed: new Date(),
-    playerIcon: 'assets/img/king.png',
-    playerName: "Papito",
-    myScore: 5,
-    theirScore: 4,
-    isMyTurn: true,
-    isFinished: false
-  };
+export class HomepageComponent implements OnInit{
+  games: GameStatus[] = [];
+  onHoldGames: GameStatus[] = [];
+  finishedGames: GameStatus[] = [];
+
+  constructor(private gameService: GameService) {}
+
+  ngOnInit(): void {
+    this.gameService.getGames().subscribe((games) => {
+      this.games = games;
+    });
+
+    this.gameService.getOnHoldGames().subscribe((games) => {
+      this.onHoldGames = games;
+    });
+
+    this.gameService.getFinishedGames().subscribe((games) => {
+      this.finishedGames = games;
+    })
+  }
+
 }

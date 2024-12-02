@@ -1,3 +1,18 @@
 .OtherGameDiv {
   display: flex;
+  background: none;
+  flex-wrap: wrap;
+  gap: 25px;
+}
+.listinggames{
+  padding: 10px 15px;
+}
+#WaitingAdverse{
+  background: var(--ecru);
+}
+.listinggames h3 {
+  background: none;
+}
+.listinggames div {
+  background: none;
 }
