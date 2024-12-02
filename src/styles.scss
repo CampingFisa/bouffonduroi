@@ -12,6 +12,23 @@ html, body {
 :root {
   --accentuated-blue: #274562;
 }
+body{
+  padding: 0;
+  margin: 0;
+}
+
+:root {
+  --accentuated-blue: #274562;
+  --more-accentuated-blue: #1b2e44;
+  --bg: #FFFDFB;
+  --indigo-dye-light: #5E8EBC;
+  --black-bean: #280003;
+  --radwood: #AA6C6C;
+  --radwood-light: #CC9C9C;
+  --ecru: #D1B583;
+  --battleship-gray-light: #D4DBD0;
+  --battleship-gray: #86918D;
+}
 
 .image-button {
   border: none;
@@ -39,4 +56,9 @@ html, body {
 h1 {
   font-size: 24px;
   margin: 4px;
+}
+
+h3 {
+  font-size: 20px;
+  padding: 2px;
 }
