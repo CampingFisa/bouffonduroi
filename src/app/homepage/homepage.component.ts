@@ -5,6 +5,8 @@ import {PanelAmisComponent} from '../panel-amis/panel-amis.component';
 import {GameStatus} from '../models/game-status.model';
 import {GameService} from '../services/game.service';
 import {GameStatusComponent} from '../game-status/game-status.component';
+import {PanelAmisService} from '../panel-amis/panel-amis.service';
+import {NgIf} from '@angular/common';
 
 @Component({
   selector: 'app-homepage',
@@ -14,6 +16,7 @@ import {GameStatusComponent} from '../game-status/game-status.component';
     FooterComponent,
     PanelAmisComponent,
     GameStatusComponent,
+    NgIf,
   ],
   templateUrl: './homepage.component.html',
   styleUrl: './homepage.component.scss'
@@ -22,8 +25,13 @@ export class HomepageComponent implements OnInit{
   games: GameStatus[] = [];
   onHoldGames: GameStatus[] = [];
   finishedGames: GameStatus[] = [];
+  showPanelAmis = true;
 
-  constructor(private gameService: GameService) {}
+  constructor(private gameService: GameService, private panelAmisService: PanelAmisService) {
+    this.panelAmisService.panelAmisVisible$.subscribe((isVisible) => {
+      this.showPanelAmis = isVisible;
+    });
+  }
 
   ngOnInit(): void {
     this.gameService.getGames().subscribe((games) => {

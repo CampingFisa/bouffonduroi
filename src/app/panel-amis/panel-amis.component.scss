@@ -1,0 +1,59 @@
+/* Sidebar container */
+:host {
+  ::ng-deep .p-tabview {
+    width: 280px; /* Largeur par défaut */
+    background: var(--indigo-dye-light);
+    height: 100%;
+  }
+  ::ng-deep .p-tabview-panels {
+    width: 100%;
+    background: var(--indigo-dye-light);
+    height: 100%;
+    border-radius: 0;
+  }
+
+  ::ng-deep .p-tabview-nav {
+    width: 100%;
+    display: flex;
+    background: var(--indigo-dye-light);
+  }
+
+  ::ng-deep .p-tabview-nav > li {
+    flex-grow: 1;
+  }
+
+  ::ng-deep .p-tabview-nav-link {
+    background-color: var(--indigo-dye-light);
+    color: var(--more-accentuated-blue);
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+  }
+
+  ::ng-deep .p-highlight > .p-tabview-nav-link {
+    color: white;
+  }
+
+  ::ng-deep .p-tabview .p-tabview-nav li.p-highlight .p-tabview-nav-link {
+    border-color: white
+  }
+
+  ::ng-deep .p-tabview .p-tabview-nav li .p-tabview-nav-link {
+    border-color: var(--indigo-dye-light);
+  }
+
+  ::ng-deep .p-tabview .p-tabview-nav li .p-tabview-nav-link:hover{
+    border-color: var(--more-accentuated-blue);
+  }
+}
+.sidebar {
+  width: 280px; /* Largeur par défaut */
+  background-color: var(--indigo-dye-light);
+  transition: width 0.3s ease; /* Animation pour l'ouverture/fermeture */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  height: 100%;
+}
+

@@ -1,38 +1,19 @@
 <header>
-  <div class="header-container">
-    <!-- Logo -->
-<!--    <div class="logo">-->
-<!--      <img src="../assets/img/logo.jpg" alt="Logo JesterQuizz" />-->
-<!--    </div>-->
-
-    <!-- Title -->
-    <div class="left-header">
-      <h1>JesterQuizz</h1>
-      <div id="Quizzchoices">
-        <button class="image-button">
-          <img src="assets/img/Quizz.png" alt="Quizz choices button" />
-        </button>
+  <p-menubar [model]="items">
+    <ng-template pTemplate="start">
+      <div class="start-header">
+        <h1>JesterQuizz</h1>
+        <img src="assets/img/Quizz.png" alt="Quizz choices button" />
       </div>
-    </div>
-
-
-    <div id="centered_buttons" class="bg-battleshiep-gray-light centered centered-buttons-border">
-      <button class="image-button">
-        <img src="assets/img/Chrono.png" alt="Chrono button" >
-      </button>
-      <button class="image-button">
-        <img src="assets/img/Swords.png" alt="Swords button" >
-      </button>
-      <button class="image-button">
-        <img src="assets/img/Shuffle.png" alt="Shuffle button" >
-      </button>
-    </div>
-
-    <!-- Settings Button -->
-    <div id="settings" class="settings">
-      <button class="image-button">
-        <img src="assets/img/settings.png" alt="Settings button" >
-      </button>
-    </div>
-  </div>
+    </ng-template>
+    <ng-template pTemplate="item" let-item >
+      <img [src]="item.icon" [alt]="item.label" width="40%" />
+    </ng-template>
+    <ng-template pTemplate="end">
+      <div class="end-header">
+        <i class="pi pi-cog" style="font-size: 1.75rem"></i>
+        <i class="pi pi-bell" style="font-size: 1.75rem" (click)="togglePanelAmis()"></i>
+      </div>
+    </ng-template>
+  </p-menubar>
 </header>
