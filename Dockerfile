@@ -1,32 +1,25 @@
-# Étape 1 : Construction de l'application Angular
-FROM node:18-alpine AS build
-
-# Définir le répertoire de travail
+FROM node:latest as build
+# Set the working directory
 WORKDIR /app
-
-# Copier les fichiers package.json et package-lock.json
+# Copy the package.json and package-lock.json files
 COPY package*.json ./
-
-# Installer les dépendances
-RUN npm install
-
-# Copier le reste des fichiers de l'application
+# Run a clean install of the dependencies
+RUN npm ci
+# Install Angular CLI globally
+RUN npm install -g @angular/cli
+# Copy all files
 COPY . .
+# Build the application
+RUN npm run build --configuration=production
 
-# Construire l'application
-RUN npm run build
+# Step 2: We use the nginx image to serve the application
+FROM nginx:latest
 
-# Étape 2 : Servir l'application avec Nginx
-FROM nginx:alpine
+# Copy the build output to replace the default nginx contents.
+COPY ./nginx.conf /etc/nginx/conf.d/default.conf
 
-# Copier les fichiers construits depuis l'étape précédente
-COPY --from=build /app/dist/ /usr/share/nginx/html
+# Copy the build output to replace the default nginx contents.
+COPY --from=build /app/dist/jesterquizz/browser /usr/share/nginx/html
 
-# Copier la configuration Nginx personnalisée
-COPY nginx.conf /etc/nginx/conf.d/default.conf
-
-# Exposer le port 3000
+# Expose port 3000
 EXPOSE 3000
-
-# Lancer Nginx en avant-plan
-CMD ["nginx", "-g", "daemon off;"]

@@ -2,7 +2,7 @@ version: '3'
 
 services:
   jesterquiz:
-    build: .
+    image: registry.mathieu-symphorien.fr/bouffonduroi-jesterquiz:latest
     ports:
       - "3000:3000"
     labels:
