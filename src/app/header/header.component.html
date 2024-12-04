@@ -16,7 +16,7 @@
     </div>
 
 
-    <div id="centered_buttons" class="bg-battleshiep-gray-light centered centered-buttons-border">
+    <!--<div id="centered_buttons" class="bg-battleshiep-gray-light centered centered-buttons-border">
       <button class="image-button">
         <img src="assets/img/Chrono.png" alt="Chrono button" >
       </button>
@@ -26,7 +26,12 @@
       <button class="image-button">
         <img src="assets/img/Shuffle.png" alt="Shuffle button" >
       </button>
-    </div>
+    </div>-->
+    <p-dock [model]="items" position="top">
+      <ng-template pTemplate="item" let-item>
+        <img [src]="item.icon" [alt]="item.label" width="100%" />
+      </ng-template>
+    </p-dock>
 
     <!-- Settings Button -->
     <div id="settings" class="settings">
