@@ -11,25 +11,4 @@ import {MenuItem} from 'primeng/api';
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss'
 })
-export class HeaderComponent implements OnInit{
-
-  items: MenuItem[] | undefined;
-
-  ngOnInit(): void {
-    this.items = [
-      {
-        label: 'Chrono button',
-        icon: 'assets/img/Chrono.png'
-      },
-      {
-        label: 'Swords button',
-        icon: 'assets/img/Swords.png'
-      },
-      {
-        label: 'Shuffle button',
-        icon: 'assets/img/Shuffle.png'
-      }
-    ];
-  }
-
-}
+export class HeaderComponent { }
