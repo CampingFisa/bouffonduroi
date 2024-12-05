@@ -1,45 +1,39 @@
-<div>
-<!--  Jusqu'au footer-->
-  <div>
-    <app-header/>
-<!--    Blabla de la page-->
-    <div id="currentGame">
-
-    </div>
-    <div id="OtherBattles" class="listinggames" >
-      <h3>AUTRES BATAILLES</h3>
-      <div class="OtherGameDiv">
+<div class="app-container">
+  <app-header style="z-index: 2;"/>
+  <div class="content-wrapper">
+    <div class="content-container">
+      <div id="currentGame">
+        <h3>Partie en cours</h3>
+      </div>
+      <div id="OtherBattles" class="listinggames" >
+        <h3>AUTRES BATAILLES</h3>
+        <div class="OtherGameDiv">
           @for (gameStatus of games; track gameStatus.id) {
-            <app-game-status [gameStatus]="gameStatus" />
+          <app-game-status [gameStatus]="gameStatus" />
           }
+        </div>
       </div>
-    </div>
-    <div id="DailyQuests">
-      <p> Daily Quests incomming ! </p>
-    </div>
-    <div id="WaitingAdverse" class="listinggames">
-      <h3>EN ATTENTE DE L'ADVERSAIRE</h3>
-      <div class="OtherGameDiv">
-        @for (gameStatus of onHoldGames; track gameStatus.id) {
+      <div id="DailyQuests">
+        <p> Daily Quests incomming ! </p>
+      </div>
+      <div id="WaitingAdverse" class="listinggames">
+        <h3>EN ATTENTE DE L'ADVERSAIRE</h3>
+        <div class="OtherGameDiv">
+          @for (gameStatus of onHoldGames; track gameStatus.id) {
           <app-game-status [gameStatus]="gameStatus" />
-        }
+          }
+        </div>
       </div>
-    </div>
-    <div id="WarHistory" class="listinggames">
-      <h3>HISTORIQUE DE GUERRE</h3>
-      <div class="OtherGameDiv">
-        @for (gameStatus of finishedGames; track gameStatus.id) {
+      <div id="WarHistory" class="listinggames">
+        <h3>HISTORIQUE DE GUERRE</h3>
+        <div class="OtherGameDiv">
+          @for (gameStatus of finishedGames; track gameStatus.id) {
           <app-game-status [gameStatus]="gameStatus" />
-        }
+          }
+        </div>
       </div>
     </div>
+    <app-panel-amis *ngIf="showPanelAmis"/>
   </div>
-  <div>
-<!--    Collé à droite avec une largeur de 80px -->
-    <app-panel-amis/>
-  </div>
-</div>
-<div>
-<!--  En bas de la page-->
   <app-footer/>
 </div>

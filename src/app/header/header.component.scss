@@ -1,34 +1,37 @@
-.header-container {
+header {
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+}
+
+.start-header {
   display: flex;
-  //flex-direction: row;
-  justify-content: space-between;
   align-items: center;
-  padding: 10px 20px;
-}
-
-.left-header{
-  display: flex;
   justify-content: space-between;
 }
 
-.image-button img {
+.start-header > img {
   width: 50px;
   height: 50px;
   background: none;
   padding: 2px;
 }
 
-/* Centrage des boutons centraux */
-.centered {
+.end-header {
   display: flex;
-  justify-content: center;
-  gap: 20px; /* Espace entre les icônes */
-  //width: 100%; /* Prend toute la largeur */
-  border-radius: 10px;
-  align-self: flex-start;
+  gap: 16px;
+  padding: 0 10px;
 }
 
-/* Aligner le bouton des paramètres à droite */
-.settings {
-  align-self: flex-end; /* Place à droite de la section */
+:host {
+  ::ng-deep .p-menubar {
+    background: var(--indigo-dye-light);
+    color: var(--more-accentuated-blue);
+    border: none;
+    border-radius: 0;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  ::ng-deep .p-menubar-end {
+    margin-left: 0;
+  }
 }

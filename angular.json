@@ -94,11 +94,14 @@
             ],
             "styles": [
               "src/styles.scss"
-            ],
+             ],
             "scripts": []
           }
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "86db03e2-7c77-435b-97f5-df676df01c03"
   }
 }
