@@ -19,51 +19,193 @@
 .logo {
   margin-bottom: 1.5rem;
 }
+//
+//.input-field {
+//  margin-bottom: 1rem;
+//  width: 100%;
+//  border-radius: 4px;
+//}
+//
+//.btn {
+//  width: 100%;
+//  margin-top: 1rem;
+//  background: var(--bg);
+//}
+//.btn:hover {
+//  background: var(--more-accentuated-blue);
+//}
+//
+//.switch-mode {
+//  margin-top: 1rem;
+//  font-size: 0.9rem;
+//  color: var(--battleship-gray);
+//}
+//
+//.switch-mode a {
+//  color: var(--indigo-dye-light);
+//  text-decoration: none;
+//  cursor: pointer;
+//}
+//
+//.switch-mode a:hover {
+//  text-decoration: underline;
+//}
+//
+//:host {
+//  ::ng-deep .p-inputtext {
+//    border-radius: 12px;
+//    background: var(--radwood);
+//    color: var(--black-bean);
+//  }
+//
+//  ::ng-deep .p-inputtext:focus {
+//    border-color: var(--black-bean);
+//  }
+//  ::ng-deep .p-input-field {
+//    border-color: var(--black-bean);
+//  }
+//
+//  ::ng-deep .p-dialog {
+//    border: 9px solid var(--indigo-dye-light);
+//    border-radius: 12px;
+//
+//  }
+//  ::ng-deep p-dialog .p-dialog-header {
+//    background: var(--indigo-dye-light);
+//    color: var(--black-bean);
+//    border : none;
+//    font-weight: bold;
+//  }
+//
+//  ::ng-deep p-dialog .p-dialog-content {
+//    background: var(--indigo-dye-light);
+//    color: var(--black-bean);
+//    font-size: 1rem;
+//    border : none;
+//  }
+//
+//  ::ng-deep p-dialog .p-button {
+//    background-color: var(--accentuated-blue);
+//    color: var(--bg);
+//    margin: 20px;
+//  }
+//
+//  ::ng-deep p-button .p-button-primary {
+//    margin: 20px;
+//    background-color: var(--radwood);
+//    color: var(--bg);
+//  }
+//  //::ng-deep .p-button-primary:hover {
+//  //  background-color: var(--black-bean);
+//  //}
+//}
+//
+//
 
-.input-field {
-  margin-bottom: 1rem;
-  width: 100%;
-  border-radius: 4px;
+:host {
+  // Personnalisation des champs d'entrée
+  ::ng-deep .p-inputtext {
+    border-radius: 12px;
+    background: var(--radwood);
+    color: var(--black-bean);
+    border: 1px solid var(--battleship-gray);
+    padding: 0.5rem;
+    &:focus {
+      border-color: var(--accentuated-blue);
+      box-shadow: 0 0 5px var(--accentuated-blue);
+    }
+  }
+
+  // Personnalisation des boutons
+  ::ng-deep .p-button {
+    border-radius: 10px;
+    font-size: 1rem;
+    font-weight: bold;
+    border: none;
+  }
+
+  ::ng-deep .p-button-primary {
+    background: var(--radwood-light);
+    //border: 1px solid var(--black-bean);
+    border: none;
+    color: var(--bg);
+    &:hover {
+      background: var(--black-bean);
+    }
+    margin: 1rem;
+  }
+
+  ::ng-deep .p-button:disabled {
+    background: var(--battleship-gray-light);
+    //border: 1px solid var(--battleship-gray);
+    color: var(--battleship-gray);
+    border: none;
+  }
+
+  // Personnalisation des dialogues (p-dialog)
+  ::ng-deep .p-dialog {
+    background: var(--bg);
+    border-radius: 12px;
+    //border: 1px solid var(--battleship-gray-light);
+    border: none;
+    .p-dialog-header {
+      background: var(--indigo-dye-light);
+      color: var(--bg);
+      border-radius: 12px 12px 0 0;
+      border: none;
+    }
+    .p-dialog-footer {
+      background: var(--battleship-gray-light);
+      border-radius: 0 0 12px 12px;
+      border: none;
+    }
+  }
+
+  // Personnalisation des mots de passe
+  ::ng-deep .p-password input {
+    background: var(--radwood-light);
+    color: var(--black-bean);
+    border-radius: 12px;
+    //border: 1px solid var(--battleship-gray);
+    border: none;
+    &:focus {
+      border-color: var(--black-bean);
+      box-shadow: 0 0 5px var(--black-bean);
+    }
+  }
+
+  // Personnalisation du formulaire et des conteneurs
+  .auth-container {
+    background: var(--bg);
+    color: var(--black-bean);
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border: none;
+  }
+
+  .auth-card {
+    background: var(--battleship-gray-light);
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border: none;
+  }
+
+  // Personnalisation des liens
+  .switch-mode a {
+    color: var(--black-bean);
+    cursor: pointer;
+    &:hover {
+      color: var(--black-bean);
+    }
+  }
+  .space1{
+    margin: 1rem;
+  }
+
 }
 
-.btn {
-  width: 100%;
-  margin-top: 1rem;
-  background: var(--bg);
+.space1{
+  margin: 1rem;
 }
-.btn:hover {
-  background: var(--more-accentuated-blue);
-}
-
-.switch-mode {
-  margin-top: 1rem;
-  font-size: 0.9rem;
-}
-
-.switch-mode a {
-  color: var(--indigo-dye-light);
-  text-decoration: none;
-  cursor: pointer;
-}
-
-.switch-mode a:hover {
-  text-decoration: underline;
-}
-
-p-dialog .p-dialog-header {
-  background-color: var(--bg);
-  color: var(--radwood);
-  font-weight: bold;
-}
-
-p-dialog .p-dialog-content {
-  color: var(--black-bean);
-  font-size: 1rem;
-}
-
-p-dialog .p-footer .p-button {
-  background-color: var(--accentuated-blue);
-  color: var(--bg);
-  margin: 20px;
-}
-
