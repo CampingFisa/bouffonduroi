@@ -1,7 +1,12 @@
 .swords-page {
-    text-align: center;
-    padding: 2rem;
-    background-color: #e9eaff;
+      display: flex;
+      flex-direction: column;
+      height: 100vh; /* Prendre toute la hauteur de l'écran */
+      background-color: #e9eaff; /* Couleur de fond */
+      padding: 1rem;
+      text-align: center;
+      justify-content: space-around;
+
   
     .title {
       margin-bottom: 2rem;

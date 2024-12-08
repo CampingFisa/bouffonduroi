@@ -32,7 +32,7 @@ export class HeaderComponent implements OnInit{
       {
         label: 'Swords button',
         icon: 'assets/img/Swords.png',
-        command: () => this.router.navigate(['/swords-page'])
+        command: () => this.router.navigate(['/game-parameters-page'])
       },
       {
         label: 'Shuffle button',

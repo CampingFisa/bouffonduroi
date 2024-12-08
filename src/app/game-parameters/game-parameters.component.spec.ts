@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { SwordPageComponent } from './sword-page.component';
+import { GameParametersComponent } from './game-parameters.component';
 
-describe('SwordPageComponent', () => {
-  let component: SwordPageComponent;
-  let fixture: ComponentFixture<SwordPageComponent>;
+describe('GameParametersComponent', () => {
+  let component: GameParametersComponent;
+  let fixture: ComponentFixture<GameParametersComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [SwordPageComponent]
+      imports: [GameParametersComponent]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(SwordPageComponent);
+    fixture = TestBed.createComponent(GameParametersComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

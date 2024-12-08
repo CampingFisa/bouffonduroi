@@ -1,0 +1,61 @@
+<div class="swords-page">
+    <header class="title">
+      <h1>PARAMETRAGE DU COMBAT</h1>
+    </header>
+  
+    <main class="content">
+      <section class="combatants p-card">
+        <h2>Combattants</h2>
+        <p>4/6</p>
+        <div class="combatants-list">
+          <div *ngFor="let fighter of fighters" class="fighter">
+            <img [src]="fighter.image" alt="{{ fighter.name }}" />
+            <p>{{ fighter.name }}</p>
+          </div>
+        </div>
+      </section>
+  
+      <section class="parameters p-card">
+        <h2>Paramètres de la partie</h2>
+  
+        <div class="param-group">
+          <p>Nombre de rounds</p>
+          <p-button
+            *ngFor="let round of rounds"
+            [label]="round.toString()"
+            (click)="setRound(round)"
+            [class.selected]="round === selectedRound"
+          ></p-button>
+        </div>
+  
+        <div class="param-group">
+          <p>Nombre de jokers</p>
+          <div class="p-buttonset">
+            <p-button
+              *ngFor="let joker of jokers"
+              [label]="joker.toString()"
+              (click)="setJoker(joker)"
+              [class.selected]="joker === selectedJoker"
+            ></p-button>
+          </div>
+        </div>
+        
+  
+        <div class="param-group">
+          <p>Inclure des questions ouvertes</p>
+          <p-toggleButton 
+            [(ngModel)]="includeOpenQuestions" 
+            onLabel="Oui" 
+            offLabel="Non"
+            onIcon="pi-check" 
+            offIcon="pi pi-times"
+          ></p-toggleButton>
+        </div>
+      </section>
+    </main>
+  
+    <footer class="start-game">
+      <p-button label="Lancer la partie" class="p-button-rounded" (click)="startGame()"></p-button>
+    </footer>
+  </div>
+  
