@@ -1,0 +1,62 @@
+<div class="swords-page">
+  <!-- Titre principal -->
+  <header class="title">
+    <h1>JESTER QUIZ</h1>
+  </header>
+
+  <!-- Contenu principal -->
+  <main class="content">
+    <!-- Section Combattants -->
+    <section class="combatants p-card">
+      <h2>Combattants</h2>
+      <p>4/6</p>
+      <div class="combatants-list">
+        <div *ngFor="let fighter of fighters" class="fighter">
+          <img [src]="fighter.image" alt="{{ fighter.name }}" />
+          <p>{{ fighter.name }}</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section Paramètres -->
+    <section class="parameters p-card">
+      <h2>Paramètres</h2>
+
+      <div class="param-group">
+        <p>Nombre de rounds</p>
+        <div class="p-buttonset">
+          <button
+            *ngFor="let round of rounds"
+            pButton
+            [label]="round"
+            (click)="setRound(round)"
+            [class.active]="round === selectedRound"
+          ></button>
+        </div>
+      </div>
+
+      <div class="param-group">
+        <p>Nombre de jokers</p>
+        <div class="p-buttonset">
+          <button
+            *ngFor="let joker of jokers"
+            pButton
+            [label]="joker"
+            (click)="setJoker(joker)"
+            [class.active]="joker === selectedJoker"
+          ></button>
+        </div>
+      </div>
+
+      <div class="param-group">
+        <p>Inclure des questions ouvertes</p>
+        <p-inputSwitch [(ngModel)]="includeOpenQuestions"></p-inputSwitch>
+      </div>
+    </section>
+  </main>
+
+  <!-- Bouton de lancement -->
+  <footer class="start-game">
+    <button pButton label="Lancer la partie" class="p-button-rounded" (click)="startGame()"></button>
+  </footer>
+</div>

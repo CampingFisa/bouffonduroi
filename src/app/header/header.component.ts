@@ -3,6 +3,7 @@ import {DockModule} from 'primeng/dock';
 import {MenuItem} from 'primeng/api';
 import {MenubarModule} from 'primeng/menubar';
 import {PanelAmisService} from '../panel-amis/panel-amis.service';
+import {Router} from '@angular/router'
 
 @Component({
   selector: 'app-header',
@@ -17,7 +18,7 @@ import {PanelAmisService} from '../panel-amis/panel-amis.service';
 export class HeaderComponent implements OnInit{
   items: MenuItem[] | undefined;
 
-  constructor(private panelAmisService: PanelAmisService) {}
+  constructor(private panelAmisService: PanelAmisService, private router: Router) {}
 
   togglePanelAmis() {
     this.panelAmisService.togglePanelAmis();
@@ -30,7 +31,8 @@ export class HeaderComponent implements OnInit{
       },
       {
         label: 'Swords button',
-        icon: 'assets/img/Swords.png'
+        icon: 'assets/img/Swords.png',
+        command: () => this.router.navigate(['/swords-page'])
       },
       {
         label: 'Shuffle button',
