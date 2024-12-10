@@ -5,9 +5,11 @@
         <i class="pi pi-user" style="font-size: 1.75rem"></i>
       </div>
     </ng-template>
-    <p>
-      Lorem ipsum dolor sit amet...
-    </p>
+    <div class="friend-list">
+      @for (user of friends; track user.id) {
+      <app-friend [player]="user" />
+      }
+    </div>
   </p-tabPanel>
   <p-tabPanel header="Header II">
     <ng-template pTemplate="header">
