@@ -1,5 +1,5 @@
 <p-tabView>
-  <p-tabPanel header="Header I">
+  <p-tabPanel header="Friends List">
     <ng-template pTemplate="header">
       <div class="flex align-items-center gap-2">
         <i class="pi pi-user" style="font-size: 1.75rem"></i>
@@ -11,14 +11,22 @@
       }
     </div>
   </p-tabPanel>
-  <p-tabPanel header="Header II">
+  <p-tabPanel header="Add friends">
     <ng-template pTemplate="header">
       <div class="flex align-items-center gap-2">
         <i class="pi pi-user-plus" style="font-size: 1.75rem"></i>
       </div>
     </ng-template>
-    <p>
-      Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium...
-    </p>
+    <p-iconField iconPosition="right">
+      <p-inputIcon styleClass="pi pi-user-plus" style="cursor: pointer" (click)="addFriend(newFriendName); newFriendName=''"/>
+      <input type="text" placeholder="John Doe" pInputText [(ngModel)]="newFriendName" (keydown.enter)="addFriend(newFriendName); newFriendName=''" />
+    </p-iconField>
+    <h4 class="waiting-title">DEMANDES EN ATTENTE</h4>
+    <div class="friend-list">
+      @for (user of pendingFriends; track user.id) {
+      <app-pending-friend [player]="user" />
+      }
+      <p class="centered-text" *ngIf="pendingFriends.length === 0">Vous n'avez pas de demande d'amis pour le moment... Promis ça viendra !</p>
+    </div>
   </p-tabPanel>
 </p-tabView>

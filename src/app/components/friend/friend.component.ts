@@ -16,6 +16,7 @@ export class FriendComponent {
 
   playWithFriend(player: User) {
     console.log('Playing with ' + player.name);
+    // TODO: Implement friend game
   }
 
 }

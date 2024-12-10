@@ -45,6 +45,17 @@
   ::ng-deep .p-tabview .p-tabview-nav li .p-tabview-nav-link:hover{
     border-color: var(--more-accentuated-blue);
   }
+
+  ::ng-deep .p-inputtext {
+    background-color: var(--more-accentuated-blue);
+    color: white;
+    border: none;
+  }
+
+  ::ng-deep .p-inputtext:enabled:focus {
+    box-shadow: none;
+    border: none;
+  }
 }
 .sidebar {
   width: 280px; /* Largeur par défaut */
@@ -63,5 +74,15 @@
   gap: 10px;
   padding: 6px;
   width: 100%;
+}
+
+.waiting-title {
+  color: white;
+  width: 100%;
+  text-align: center;
+}
+
+.centered-text {
+  text-align: center;
 }
 
