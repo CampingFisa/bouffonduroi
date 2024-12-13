@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { PasswordModule } from 'primeng/password';
 import { Button } from 'primeng/button';
@@ -8,7 +8,6 @@ import { FloatLabelModule } from 'primeng/floatlabel';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { DialogModule } from 'primeng/dialog';
-import * as CryptoJS from 'crypto-js';
 import { AuthenticateService } from '../../services/authenticate.service';
 
 @Component({
@@ -31,24 +30,10 @@ export class LoginComponent {
   errorMessage = '';
   showErrorDialog: boolean = false;
 
-  // URL de l'API
-  private baseUrl = 'http://localhost:8081/api/users';
-
-
   constructor(private http: HttpClient, private router: Router, private authService: AuthenticateService) {}
 
   onSubmit() {
     this.login();
-  }
-
-  // Sauvegarde du token
-  private saveToken(token: string) {
-    sessionStorage.setItem('authToken', token); // Utilise sessionStorage pour la session en cours
-  }
-
-  // Récupération du token
-  public getToken(): string | null {
-    return sessionStorage.getItem('authToken');
   }
 
   // Fonction pour se connecter
@@ -76,6 +61,6 @@ export class LoginComponent {
   }
 
   goRegister() {
-    this.router.navigate(['/register']).then(r => console.log('Redirection vers la page d\'inscription'));
+    this.router.navigate(['/register']).then(() => console.log('Redirection vers la page d\'inscription'));
   }
 }

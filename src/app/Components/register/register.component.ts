@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { PasswordModule } from 'primeng/password';
 import { Button } from 'primeng/button';
@@ -8,7 +8,6 @@ import { FloatLabelModule } from 'primeng/floatlabel';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { DialogModule } from 'primeng/dialog';
-import * as CryptoJS from 'crypto-js';
 import { AuthenticateService } from '../../services/authenticate.service';
 import {LoginComponent} from '../login/login.component';
 
