@@ -1,0 +1,59 @@
+<div class="auth-container">
+  <!-- Popup d'erreur -->
+  <p-dialog header="Erreur" [modal]="true" [(visible)]="showErrorDialog" [style]="{ width: '25rem' }" >
+    <span class="p-text-secondary block mb-5">{{ errorMessage }}</span>
+    <div class="flex justify-content-end gap-2">
+      <p-button label="Ok" (onClick)="showErrorDialog = false"/>
+    </div>
+  </p-dialog>
+  <div class="auth-card">
+    <div class="logo">
+      <img src="assets/img/logo.png" alt="Logo" />
+    </div>
+
+  <form (ngSubmit)="onSubmit()">
+    <input
+      [(ngModel)]="email"
+      name="email"
+      placeholder="Email"
+      type="email"
+      class="input-field space1"
+      required
+    >
+    <input
+      [(ngModel)]="username"
+      name="username"
+      placeholder="Pseudo"
+      class="input-field space1"
+      required
+    >
+    <p-password
+      [(ngModel)]="password"
+      name="password"
+      placeholder="Mot de passe"
+      class="input-field space1"
+      [feedback]="false"
+      required
+    ></p-password>
+    <p-password
+      [(ngModel)]="confirmPassword"
+      name="confirmPassword"
+      placeholder="Valider le mot de passe"
+      class="input-field space1"
+      [feedback]="false"
+      required
+    ></p-password>
+
+    <p-button
+      label="Valider"
+      class="btn"
+      styleClass="p-button-primary space1"
+      type="submit"
+    ></p-button>
+    <p class="switch-mode">
+      Déjà inscrit ? <a (click)="switchMode()">Connexion</a>
+    </p>
+  </form>
+
+  </div>
+</div>
