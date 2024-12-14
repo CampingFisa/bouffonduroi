@@ -38,6 +38,10 @@ export class AuthenticateService {
     return sessionStorage.getItem('authToken');
   }
 
+  isLoggedIn(): boolean {
+    return this.getToken() != null; // Vérifie si le token existe
+  }
+
   // Fonction pour s'inscrire
   register(username: string, email: string, password: string) {
     this.hashedPassword = this.hashPassword(password);

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { PasswordModule } from 'primeng/password';
 import { Button } from 'primeng/button';
@@ -25,13 +25,23 @@ import { AuthenticateService } from '../../services/authenticate.service';
   templateUrl: './login.component.html',
   styleUrl: './login.component.scss'
 })
-export class LoginComponent {
+export class LoginComponent implements OnInit {
   email = '';
   password = '';
   errorMessage = '';
   showErrorDialog: boolean = false;
 
+
+
   constructor(private http: HttpClient, private router: Router, private authService: AuthenticateService) {}
+
+
+  ngOnInit(): void {
+    if (this.authService.isLoggedIn()) {
+      this.router.navigate(['/']).then(() => console.log('Redirection vers la page d\'accueil'));
+    }
+  }
+
 
   onSubmit() {
     this.login();

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { PasswordModule } from 'primeng/password';
 import { Button } from 'primeng/button';
@@ -10,6 +10,7 @@ import { Router } from '@angular/router';
 import { DialogModule } from 'primeng/dialog';
 import { AuthenticateService } from '../../services/authenticate.service';
 import {LoginComponent} from '../login/login.component';
+
 
 @Component({
   selector: 'app-register',
@@ -27,7 +28,7 @@ import {LoginComponent} from '../login/login.component';
   templateUrl: './register.component.html',
   styleUrl: './register.component.scss'
 })
-export class RegisterComponent {
+export class RegisterComponent implements OnInit{
   email = '';
   password = '';
   username = '';
@@ -36,6 +37,12 @@ export class RegisterComponent {
   showErrorDialog: boolean = false;
 
   constructor(private http: HttpClient, private router: Router, private authService: AuthenticateService) {}
+
+  ngOnInit(): void {
+    if (this.authService.isLoggedIn()) {
+      this.router.navigate(['/']).then(() => console.log('Redirection vers la page d\'accueil'));
+    }
+  }
 
   onSubmit() {
       this.register()
