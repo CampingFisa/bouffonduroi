@@ -39,12 +39,7 @@ export class AuthenticateService {
   }
 
   // Fonction pour s'inscrire
-  register(username: string, email: string, password: string, confirmPassword: string) {
-    if (password !== confirmPassword) {
-      console.error('Les mots de passe ne correspondent pas.');
-      return;
-    }
-
+  register(username: string, email: string, password: string) {
     this.hashedPassword = this.hashPassword(password);
 
     const registerBody = {

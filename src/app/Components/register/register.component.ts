@@ -42,8 +42,15 @@ export class RegisterComponent {
   }
 
   register() {
-    // @ts-ignore
-    this.authService.register(this.username, this.email, this.password, this.confirmPassword).subscribe({
+    if (this.password !== this.confirmPassword) {
+      console.error('Les mots de passe ne correspondent pas.');
+      this.password = '';
+      this.confirmPassword = '';
+      this.errorMessage = 'Les mots de passes ne correspondent pas.';
+      this.showErrorDialog = true;
+      return;
+    }
+    this.authService.register(this.username, this.email, this.password).subscribe({
       next: () => {
         this.email = '';
         this.password = '';
@@ -72,7 +79,7 @@ export class RegisterComponent {
       this.errorMessage = 'Identifiant ou mot de passe incorrect.';
       this.showErrorDialog = true;
     } else if (err.status === 409) {
-      this.errorMessage = 'Un compte existe déjà avec cet email.';
+      this.errorMessage = 'Un compte existe déjà avec cet email ou ce pseudo.';
       this.showErrorDialog = true;
     } else if (err.status === 500) {
       this.router.navigate(['/server-error']).then(() => console.log('Server error'));
