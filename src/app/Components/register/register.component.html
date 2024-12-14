@@ -13,18 +13,22 @@
 
   <form (ngSubmit)="onSubmit()">
     <input
+      pInputText
       [(ngModel)]="email"
+      [ngModelOptions]="{standalone: true}"
       name="email"
       placeholder="Email"
       type="email"
-      class="input-field space1"
+      class="input-field"
       required
     >
     <input
+      pInputText
       [(ngModel)]="username"
+      [ngModelOptions]="{standalone: true}"
       name="username"
       placeholder="Pseudo"
-      class="input-field space1"
+      class="input-field"
       required
     >
     <p-password
@@ -39,19 +43,18 @@
       [(ngModel)]="confirmPassword"
       name="confirmPassword"
       placeholder="Valider le mot de passe"
-      class="input-field space1"
+      class="input-field"
       [feedback]="false"
       required
     ></p-password>
-
     <p-button
       label="Valider"
       class="btn"
-      styleClass="p-button-primary space1"
+      styleClass="p-button-primary validation-button"
       type="submit"
     ></p-button>
     <p class="switch-mode">
-      Déjà inscrit ? <a (click)="switchMode()">Connexion</a>
+      Déjà inscrit.e ?<a (click)="switchMode()">Connexion</a>
     </p>
   </form>
 

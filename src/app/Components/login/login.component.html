@@ -12,28 +12,31 @@
     </div>
 
 <form (ngSubmit)="onSubmit()">
-  <input
-    pInputText
-    [(ngModel)]="email"
-    [ngModelOptions]="{standalone: true}"
-    id="email"
-    type="email"
-    placeholder="Email"
-    class="input-field space1"
-    required
-  >
-  <p-password
-    [(ngModel)]="password"
-    name="password"
-    placeholder="Mot de passe"
-    class="input-field space1"
-    [feedback]="false"
-    required
-  ></p-password>
+  <div class="space1">
+    <input
+      pInputText
+      [(ngModel)]="email"
+      [ngModelOptions]="{standalone: true}"
+      id="email"
+      type="email"
+      placeholder="Email"
+      class="input-field"
+      required
+    >
+    <p-password
+      [(ngModel)]="password"
+      name="password"
+      placeholder="Mot de passe"
+      class="input-field"
+      [feedback]="false"
+      required
+    ></p-password>
+
+  </div>
   <p-button
     label="Connexion"
     class="btn"
-    styleClass="p-button-primary space1"
+    styleClass="p-button space1 validation-button"
     type="submit"
   ></p-button>
   <p class="switch-mode">
