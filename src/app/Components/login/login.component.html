@@ -1,8 +1,8 @@
 <div class="auth-container">
   <!-- Popup d'erreur -->
-  <p-dialog header="Erreur" [modal]="true" [(visible)]="showErrorDialog" [style]="{ width: '25rem' }" >
-    <span class="p-text-secondary block mb-5">{{ errorMessage }}</span>
-    <div class="flex justify-content-end gap-2">
+  <p-dialog header="Erreur" [modal]="true" [(visible)]="showErrorDialog" [style]="{ width: '25rem' }">
+    <span class="p-text-secondary block mb-5 dialog-message">{{ errorMessage }}</span>
+    <div class="flex justify-content-end gap-2 dialog-button-div">
       <p-button label="Ok" (onClick)="showErrorDialog = false"/>
     </div>
   </p-dialog>
@@ -25,6 +25,7 @@
     >
     <p-password
       [(ngModel)]="password"
+      id="password"
       name="password"
       placeholder="Mot de passe"
       class="input-field"
@@ -36,11 +37,11 @@
   <p-button
     label="Connexion"
     class="btn"
-    styleClass="p-button space1 validation-button"
+    styleClass="p-button space1"
     type="submit"
   ></p-button>
   <p class="switch-mode">
-    Pas de compte ? <a (click)="goRegister()">Inscription</a>
+    Pas de compte ?<a (click)="goRegister()">Inscription</a>
   </p>
 </form>
 

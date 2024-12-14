@@ -16,12 +16,15 @@
   padding: 2rem;
   box-shadow: 0 4px 6px var(--battleship-gray);
   text-align: center;
-  width: 90%;
+  width: 100%;
   max-width: 400px;
   border: none;
 }
 
 // Personnalisation des liens
+.switch-mode{
+  color: var(--bg);
+}
 .switch-mode a {
   color: var(--black-bean);
   cursor: pointer;
@@ -43,11 +46,17 @@
     margin: 0.9rem;
 
     &:focus {
-      border-color: var(--accentuated-blue);
-      box-shadow: 0 0 5px var(--accentuated-blue);
+      border-color: var(--black-bean);
+      box-shadow: 0 0 5px var(--black-bean);
     }
   }
-  ::ng-deep .validation-button {
+
+  ::ng-deep .p-inputtext input::placeholder {
+    color: var(--battleship-gray-light);
+  }
+
+
+  ::ng-deep .p-button {
     margin: 1rem;
     background: var(--black-bean);
     border-color: var(--black-bean);
@@ -59,5 +68,43 @@
       color: var(--black-bean);
 
     }
+  }
+
+  ::ng-deep .p-dialog .p-button {
+    background: var(--radwood);
+    color: var(--black-bean);
+    border-color: var(--radwood);
+    box-shadow: 0 0 5px var(--radwood);
+
+  }
+
+  ::ng-deep .p-password input::placeholder {
+    color: var(--battleship-gray-light);
+  }
+
+  ::ng-deep .p-dialog .p-button:hover {
+    background: var(--black-bean);
+    color: var(--battleship-gray-light);
+    border-color: var(--black-bean);
+    box-shadow: 0 0 5px var(--black-bean);
+  }
+
+  ::ng-deep .p-dialog-header {
+    background: var(--radwood-light);
+    color: var(--black-bean);
+
+  }
+
+  ::ng-deep .p-dialog-content {
+    background: var(--radwood-light);
+  }
+
+  ::ng-deep .p-dialog-content span {
+    color: var(--bg);
+  }
+
+  ::ng-deep .p-dialog-footer {
+    background: var(--radwood-light);
+    color: var(--black-bean);
   }
 }

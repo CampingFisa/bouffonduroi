@@ -20,7 +20,8 @@ import { AuthenticateService } from '../../services/authenticate.service';
     Button,
     NgIf,
     FloatLabelModule,
-    DialogModule],
+    DialogModule,
+  ],
   templateUrl: './login.component.html',
   styleUrl: './login.component.scss'
 })
