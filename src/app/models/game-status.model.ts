@@ -8,7 +8,16 @@ export class GameStatus {
   isMyTurn: boolean;
   isFinished: boolean;
 
-  constructor(id: string, lastPlayed: Date, playerIcon: string, playerName: string, myScore: number, theirScore: number, isMyTurn: boolean, isFinished: boolean) {
+  constructor(
+    id: string,
+    lastPlayed: Date,
+    playerIcon: string,
+    playerName: string,
+    myScore: number,
+    theirScore: number,
+    isMyTurn: boolean,
+    isFinished: boolean
+  ) {
     this.id = id;
     this.lastPlayed = lastPlayed;
     this.playerIcon = playerIcon;

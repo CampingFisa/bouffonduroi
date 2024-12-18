@@ -6,13 +6,17 @@
         <img src="assets/img/Quizz.png" alt="Quizz choices button" />
       </div>
     </ng-template>
-    <ng-template pTemplate="item" let-item >
+    <ng-template pTemplate="item" let-item>
       <img [src]="item.icon" [alt]="item.label" width="40%" />
     </ng-template>
     <ng-template pTemplate="end">
       <div class="end-header">
         <i class="pi pi-cog" style="font-size: 1.75rem"></i>
-        <i class="pi pi-bell" style="font-size: 1.75rem" (click)="togglePanelAmis()"></i>
+        <i
+          class="pi pi-bell"
+          style="font-size: 1.75rem"
+          (click)="togglePanelAmis()"
+        ></i>
       </div>
     </ng-template>
   </p-menubar>

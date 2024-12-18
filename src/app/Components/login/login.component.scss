@@ -1,0 +1,112 @@
+.auth-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: var(--bg);
+}
+
+.logo {
+  margin-bottom: 1.5rem;
+}
+
+.auth-card {
+  background: var(--radwood-light);
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 4px 6px var(--battleship-gray);
+  text-align: center;
+  width: 100%;
+  max-width: 400px;
+  border: none;
+}
+
+// Personnalisation des liens
+.switch-mode {
+  color: var(--bg);
+}
+.switch-mode a {
+  color: var(--black-bean);
+  cursor: pointer;
+  margin: 1rem;
+  &:hover {
+    color: var(--black-bean);
+    text-decoration: underline;
+  }
+}
+
+:host {
+  // Personnalisation des champs d'entrée
+  ::ng-deep .p-inputtext {
+    border-radius: 12px;
+    background: var(--radwood);
+    color: var(--black-bean);
+    border: 1px solid var(--black-bean);
+    padding: 0.5rem;
+    margin: 0.9rem;
+
+    &:focus {
+      border-color: var(--black-bean);
+      box-shadow: 0 0 5px var(--black-bean);
+    }
+  }
+
+  ::ng-deep .p-inputtext input::placeholder {
+    color: var(--battleship-gray-light);
+  }
+
+  ::ng-deep .p-button {
+    margin: 1rem;
+    background: var(--black-bean);
+    border-color: var(--black-bean);
+    color: var(--battleship-gray-light);
+
+    &:hover {
+      background: var(--radwood);
+      border-color: var(--radwood);
+      color: var(--black-bean);
+    }
+  }
+
+  ::ng-deep .p-password input::placeholder {
+    color: var(--battleship-gray-light);
+  }
+
+  // Fix the position of the toggleMask icon
+  ::ng-deep .p-password .p-password-panel {
+    top: 50%; /* Adjust the top position as needed */
+    transform: translateY(-50%);
+  }
+
+  ::ng-deep .p-dialog .p-button {
+    background: var(--radwood);
+    color: var(--black-bean);
+    border-color: var(--radwood);
+    box-shadow: 0 0 5px var(--radwood);
+  }
+
+  ::ng-deep .p-dialog .p-button:hover {
+    background: var(--black-bean);
+    color: var(--battleship-gray-light);
+    border-color: var(--black-bean);
+    box-shadow: 0 0 5px var(--black-bean);
+  }
+
+  ::ng-deep .p-dialog-header {
+    background: var(--radwood-light);
+    color: var(--black-bean);
+  }
+
+  ::ng-deep .p-dialog-content {
+    background: var(--radwood-light);
+  }
+
+  ::ng-deep .p-dialog-content span {
+    color: var(--bg);
+  }
+
+  ::ng-deep .p-dialog-footer {
+    background: var(--radwood-light);
+    color: var(--black-bean);
+  }
+}
