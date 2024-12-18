@@ -6,7 +6,9 @@ import {RegisterComponent} from './Components/register/register.component';
 import {AuthGuard} from './auth.guard';
 
 export const routes: Routes = [
-  { path: '', component: HomepageComponent, canActivate: [AuthGuard] },
+  // { path: '', component: HomepageComponent, canActivate: [AuthGuard] },
+  // TODO ENLEVER LE COMMENTAIRE
+  { path: '', component: HomepageComponent },
   { path: 'about', component: AboutUsComponent },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
