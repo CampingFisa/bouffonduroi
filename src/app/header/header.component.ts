@@ -1,20 +1,17 @@
-import {Component, OnInit} from '@angular/core';
-import {DockModule} from 'primeng/dock';
-import {MenuItem} from 'primeng/api';
-import {MenubarModule} from 'primeng/menubar';
-import {PanelAmisService} from '../panel-amis/panel-amis.service';
+import { Component, OnInit } from '@angular/core';
+import { DockModule } from 'primeng/dock';
+import { MenuItem } from 'primeng/api';
+import { MenubarModule } from 'primeng/menubar';
+import { PanelAmisService } from '../panel-amis/panel-amis.service';
 
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [
-    DockModule,
-    MenubarModule
-  ],
+  imports: [DockModule, MenubarModule],
   templateUrl: './header.component.html',
-  styleUrl: './header.component.scss'
+  styleUrl: './header.component.scss',
 })
-export class HeaderComponent implements OnInit{
+export class HeaderComponent implements OnInit {
   items: MenuItem[] | undefined;
 
   constructor(private panelAmisService: PanelAmisService) {}
@@ -26,16 +23,16 @@ export class HeaderComponent implements OnInit{
     this.items = [
       {
         label: 'Chrono button',
-        icon: 'assets/img/Chrono.png'
+        icon: 'assets/img/Chrono.png',
       },
       {
         label: 'Swords button',
-        icon: 'assets/img/Swords.png'
+        icon: 'assets/img/Swords.png',
       },
       {
         label: 'Shuffle button',
-        icon: 'assets/img/Shuffle.png'
-      }
+        icon: 'assets/img/Shuffle.png',
+      },
     ];
   }
 }

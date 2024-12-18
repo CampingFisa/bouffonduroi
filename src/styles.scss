@@ -1,6 +1,6 @@
-@import "primeng/resources/themes/lara-light-blue/theme.css";
-@import "primeng/resources/primeng.css";
-@import "primeicons/primeicons.css";
+@import 'primeng/resources/themes/lara-light-blue/theme.css';
+@import 'primeng/resources/primeng.css';
+@import 'primeicons/primeicons.css';
 /* You can add global styles to this file, and also import other style files */
 * {
   font-family: 'inter', sans-serif;
@@ -16,13 +16,14 @@ body {
   height: 100%;
 }
 
-html, body {
-  background: #FFFDF8;
+html,
+body {
+  background: #fffdf8;
   margin: 0;
   padding: 0;
 }
 
-body{
+body {
   padding: 0;
   margin: 0;
 }
@@ -30,14 +31,14 @@ body{
 :root {
   --accentuated-blue: #274562;
   --more-accentuated-blue: #1b2e44;
-  --bg: #FFFDFB;
-  --indigo-dye-light: #5E8EBC;
+  --bg: #fffdfb;
+  --indigo-dye-light: #5e8ebc;
   --black-bean: #280003;
-  --radwood: #AA6C6C;
-  --radwood-light: #CC9C9C;
-  --ecru: #D1B583;
-  --battleship-gray-light: #D4DBD0;
-  --battleship-gray: #86918D;
+  --radwood: #aa6c6c;
+  --radwood-light: #cc9c9c;
+  --ecru: #d1b583;
+  --battleship-gray-light: #d4dbd0;
+  --battleship-gray: #86918d;
 }
 
 .image-button {
@@ -54,14 +55,13 @@ body{
 }
 
 .bg-battleshiep-gray-light {
-  background: #D4DBD0;
+  background: #d4dbd0;
   //opacity: 0.1;
 }
 
 .centered-buttons-border {
-  border: 4px solid #86918D;
+  border: 4px solid #86918d;
 }
-
 
 h1 {
   font-size: 24px;

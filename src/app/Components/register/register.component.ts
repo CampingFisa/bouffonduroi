@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { PasswordModule } from 'primeng/password';
 import { Button } from 'primeng/button';
@@ -9,8 +9,7 @@ import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { DialogModule } from 'primeng/dialog';
 import { AuthenticateService } from '../../services/authenticate.service';
-import {LoginComponent} from '../login/login.component';
-
+import { LoginComponent } from '../login/login.component';
 
 @Component({
   selector: 'app-register',
@@ -23,12 +22,12 @@ import {LoginComponent} from '../login/login.component';
     NgIf,
     FloatLabelModule,
     DialogModule,
-    LoginComponent
+    LoginComponent,
   ],
   templateUrl: './register.component.html',
-  styleUrl: './register.component.scss'
+  styleUrl: './register.component.scss',
 })
-export class RegisterComponent implements OnInit{
+export class RegisterComponent implements OnInit {
   email = '';
   password = '';
   username = '';
@@ -36,16 +35,22 @@ export class RegisterComponent implements OnInit{
   errorMessage = '';
   showErrorDialog: boolean = false;
 
-  constructor(private http: HttpClient, private router: Router, private authService: AuthenticateService) {}
+  constructor(
+    private http: HttpClient,
+    private router: Router,
+    private authService: AuthenticateService
+  ) {}
 
   ngOnInit(): void {
     if (this.authService.isLoggedIn()) {
-      this.router.navigate(['/']).then(() => console.log('Redirection vers la page d\'accueil'));
+      this.router
+        .navigate(['/'])
+        .then(() => console.log("Redirection vers la page d'accueil"));
     }
   }
 
   onSubmit() {
-      this.register()
+    this.register();
   }
 
   register() {
@@ -57,29 +62,37 @@ export class RegisterComponent implements OnInit{
       this.showErrorDialog = true;
       return;
     }
-    this.authService.register(this.username, this.email, this.password).subscribe({
-      next: () => {
-        this.email = '';
-        this.password = '';
-        this.username = '';
-        this.confirmPassword = '';
-        console.log('Inscription réussie !');
-        this.router.navigate(['/login']).then(() => console.log('Redirection vers la page de connexion'));
-      },
-      error: (err) => {
-        console.error('Erreur lors de l\'inscription :', err);
-        this.handleError(err);
-      },
-    });
+    this.authService
+      .register(this.username, this.email, this.password)
+      .subscribe({
+        next: () => {
+          this.email = '';
+          this.password = '';
+          this.username = '';
+          this.confirmPassword = '';
+          console.log('Inscription réussie !');
+          this.router
+            .navigate(['/login'])
+            .then(() => console.log('Redirection vers la page de connexion'));
+        },
+        error: (err) => {
+          console.error("Erreur lors de l'inscription :", err);
+          this.handleError(err);
+        },
+      });
   }
 
   switchMode() {
-    this.router.navigate(['/login']).then(() => console.log('Redirection vers la page de connexion'));
+    this.router
+      .navigate(['/login'])
+      .then(() => console.log('Redirection vers la page de connexion'));
   }
 
   private handleError(err: any) {
     if (err.status === 400) {
-      this.router.navigate(['/bad-request']).then(() => console.log('Bad request'));
+      this.router
+        .navigate(['/bad-request'])
+        .then(() => console.log('Bad request'));
     } else if (err.status === 401) {
       this.email = '';
       this.password = '';
@@ -89,7 +102,9 @@ export class RegisterComponent implements OnInit{
       this.errorMessage = 'Un compte existe déjà avec cet email ou ce pseudo.';
       this.showErrorDialog = true;
     } else if (err.status === 500) {
-      this.router.navigate(['/server-error']).then(() => console.log('Server error'));
+      this.router
+        .navigate(['/server-error'])
+        .then(() => console.log('Server error'));
     } else if (err.status === 403) {
       this.router.navigate(['/forbidden']).then(() => console.log('Forbidden'));
     } else {

@@ -5,14 +5,10 @@ import { TabViewModule } from 'primeng/tabview';
 @Component({
   selector: 'app-panel-amis',
   standalone: true,
-  imports: [
-    CommonModule,
-    TabViewModule
-  ],
+  imports: [CommonModule, TabViewModule],
   templateUrl: './panel-amis.component.html',
-  styleUrl: './panel-amis.component.scss'
+  styleUrl: './panel-amis.component.scss',
 })
-
 export class PanelAmisComponent {
   activeTab = 0; // Onglet actif
   tabs = [

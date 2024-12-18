@@ -8,7 +8,7 @@ import { GameStatus } from '../models/game-status.model';
 export class GameService {
   private games: GameStatus[] = [
     {
-      id : crypto.randomUUID().substring(0,8),
+      id: crypto.randomUUID().substring(0, 8),
       lastPlayed: new Date('2024-11-30'),
       playerIcon: 'assets/img/knight.png',
       playerName: 'Maxou',
@@ -18,7 +18,7 @@ export class GameService {
       isFinished: false,
     },
     {
-      id : crypto.randomUUID().substring(0,8),
+      id: crypto.randomUUID().substring(0, 8),
       lastPlayed: new Date('2024-11-28'),
       playerIcon: 'assets/img/farmer.png',
       playerName: 'Nico',
@@ -28,7 +28,7 @@ export class GameService {
       isFinished: false,
     },
     {
-      id : crypto.randomUUID().substring(0,8),
+      id: crypto.randomUUID().substring(0, 8),
       lastPlayed: new Date('2024-11-25'),
       playerIcon: 'assets/img/king.png',
       playerName: 'Papito',
@@ -41,7 +41,7 @@ export class GameService {
 
   private onHoldGames: GameStatus[] = [
     {
-      id : crypto.randomUUID().substring(0,8),
+      id: crypto.randomUUID().substring(0, 8),
       lastPlayed: new Date('2024-11-30'),
       playerIcon: 'assets/img/stupid_knight.png',
       playerName: 'Elo',
@@ -54,7 +54,7 @@ export class GameService {
 
   private finishedGames: GameStatus[] = [
     {
-      id : crypto.randomUUID().substring(0,8),
+      id: crypto.randomUUID().substring(0, 8),
       lastPlayed: new Date('2024-11-21'),
       playerIcon: 'assets/img/stupid_knight.png',
       playerName: 'Elo',
@@ -64,7 +64,7 @@ export class GameService {
       isFinished: true,
     },
     {
-      id : crypto.randomUUID().substring(0,8),
+      id: crypto.randomUUID().substring(0, 8),
       lastPlayed: new Date('2024-11-19'),
       playerIcon: 'assets/img/farmer.png',
       playerName: 'Nico',
@@ -74,7 +74,7 @@ export class GameService {
       isFinished: true,
     },
     {
-      id : crypto.randomUUID().substring(0,8),
+      id: crypto.randomUUID().substring(0, 8),
       lastPlayed: new Date('2024-11-19'),
       playerIcon: 'assets/img/knight.png',
       playerName: 'Maxou',
@@ -84,7 +84,7 @@ export class GameService {
       isFinished: true,
     },
     {
-      id : crypto.randomUUID().substring(0,8),
+      id: crypto.randomUUID().substring(0, 8),
       lastPlayed: new Date('2024-11-18'),
       playerIcon: 'assets/img/stupid_knight.png',
       playerName: 'Elo',
@@ -94,7 +94,7 @@ export class GameService {
       isFinished: true,
     },
     {
-      id : crypto.randomUUID().substring(0,8),
+      id: crypto.randomUUID().substring(0, 8),
       lastPlayed: new Date('2024-11-18'),
       playerIcon: 'assets/img/farmer.png',
       playerName: 'Nico',
@@ -104,7 +104,7 @@ export class GameService {
       isFinished: true,
     },
     {
-      id : crypto.randomUUID().substring(0,8),
+      id: crypto.randomUUID().substring(0, 8),
       lastPlayed: new Date('2024-11-17'),
       playerIcon: 'assets/img/knight.png',
       playerName: 'Maxou',

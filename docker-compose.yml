@@ -4,6 +4,6 @@ services:
   jesterquiz:
     image: registry.mathieu-symphorien.fr/bouffonduroi-jesterquiz:latest
     ports:
-      - "3000:3000"
+      - '3000:3000'
     labels:
-      - "com.centurylinklabs.watchtower.enable=true"
+      - 'com.centurylinklabs.watchtower.enable=true'

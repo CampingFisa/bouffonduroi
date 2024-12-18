@@ -35,14 +35,14 @@
   }
 
   ::ng-deep .p-tabview .p-tabview-nav li.p-highlight .p-tabview-nav-link {
-    border-color: white
+    border-color: white;
   }
 
   ::ng-deep .p-tabview .p-tabview-nav li .p-tabview-nav-link {
     border-color: var(--indigo-dye-light);
   }
 
-  ::ng-deep .p-tabview .p-tabview-nav li .p-tabview-nav-link:hover{
+  ::ng-deep .p-tabview .p-tabview-nav li .p-tabview-nav-link:hover {
     border-color: var(--more-accentuated-blue);
   }
 }
@@ -56,4 +56,3 @@
   align-items: center;
   height: 100%;
 }
-

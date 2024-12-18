@@ -7,7 +7,7 @@
         </div>
         <div id="settings" class="settings">
           <button class="image-button">
-            <img src="assets/img/settings.png" alt="Settings button" >
+            <img src="assets/img/settings.png" alt="Settings button" />
           </button>
         </div>
       </div>
@@ -16,25 +16,34 @@
       <div class="title-about">
         <h1>A PROPOS DE NOUS</h1>
       </div>
-      <div (mouseenter)="displaySecondPhoto()" (mouseleave)="displayFirstPhoto()">
-        @if(isFirstPhotoDisplayed) {
-          <img class="photo-of-us" src="assets/img/nice_photo_of_us.jpg" alt="us"/>
+      <div
+        (mouseenter)="displaySecondPhoto()"
+        (mouseleave)="displayFirstPhoto()"
+      >
+        @if (isFirstPhotoDisplayed) {
+          <img
+            class="photo-of-us"
+            src="assets/img/nice_photo_of_us.jpg"
+            alt="us"
+          />
+        } @else {
+          <img
+            class="photo-of-us"
+            src="assets/img/nice_photo_of_us_in_mud.jpg"
+            alt="us-tired"
+          />
         }
-        @else {
-          <img class="photo-of-us" src="assets/img/nice_photo_of_us_in_mud.jpg" alt="us-tired"/>
-        }
-
       </div>
       <div class="description">
         <p style="margin-bottom: 40px">
-          Nous sommes une équipe de 8 étudiants en 5ème année à l'INSA Hauts-de-France.
-          Nous avons réalisé ce projet dans le cadre de la nuit de l'informatique.
-          Nous sommes fier de vous présenter Jester Quiz !
+          Nous sommes une équipe de 8 étudiants en 5ème année à l'INSA
+          Hauts-de-France. Nous avons réalisé ce projet dans le cadre de la nuit
+          de l'informatique. Nous sommes fier de vous présenter Jester Quiz !
         </p>
         <p>
-          Ce projet permet de sensibiliser à la cause de l'élevage de cochons en batterie.
-          En plus du côté éducatif, nous avons voulu rendre le jeu ludique et amusant... Saurez-vous d'ailleurs trouver
-          le cochon caché ?
+          Ce projet permet de sensibiliser à la cause de l'élevage de cochons en
+          batterie. En plus du côté éducatif, nous avons voulu rendre le jeu
+          ludique et amusant... Saurez-vous d'ailleurs trouver le cochon caché ?
         </p>
       </div>
     </div>

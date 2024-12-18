@@ -10,7 +10,10 @@ export class AuthenticateService {
   private baseUrl = 'http://localhost:8081/api/users'; // URL de l'API
   private hashedPassword: string = '';
 
-  constructor(private http: HttpClient, private router: Router) {}
+  constructor(
+    private http: HttpClient,
+    private router: Router
+  ) {}
 
   // Fonction de hachage sans salt
   hashPassword(password: string): string {
@@ -20,7 +23,9 @@ export class AuthenticateService {
   // Fonction pour se connecter
   login(email: string, password: string) {
     this.hashedPassword = this.hashPassword(password);
-    const loginParams = new HttpParams().set('email', email).set('password', this.hashedPassword);
+    const loginParams = new HttpParams()
+      .set('email', email)
+      .set('password', this.hashedPassword);
 
     return this.http.post(`${this.baseUrl}/login`, null, {
       params: loginParams,
@@ -54,7 +59,9 @@ export class AuthenticateService {
 
     const queryParams = new HttpParams().set('password', this.hashedPassword);
 
-    return this.http.post(`${this.baseUrl}/register`, registerBody, { params: queryParams });
+    return this.http.post(`${this.baseUrl}/register`, registerBody, {
+      params: queryParams,
+    });
   }
 
   // Déconnexion

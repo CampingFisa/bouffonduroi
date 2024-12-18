@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { PasswordModule } from 'primeng/password';
 import { Button } from 'primeng/button';
@@ -23,7 +23,7 @@ import { AuthenticateService } from '../../services/authenticate.service';
     DialogModule,
   ],
   templateUrl: './login.component.html',
-  styleUrl: './login.component.scss'
+  styleUrl: './login.component.scss',
 })
 export class LoginComponent implements OnInit {
   email = '';
@@ -31,17 +31,19 @@ export class LoginComponent implements OnInit {
   errorMessage = '';
   showErrorDialog: boolean = false;
 
-
-
-  constructor(private http: HttpClient, private router: Router, private authService: AuthenticateService) {}
-
+  constructor(
+    private http: HttpClient,
+    private router: Router,
+    private authService: AuthenticateService
+  ) {}
 
   ngOnInit(): void {
     if (this.authService.isLoggedIn()) {
-      this.router.navigate(['/']).then(() => console.log('Redirection vers la page d\'accueil'));
+      this.router
+        .navigate(['/'])
+        .then(() => console.log("Redirection vers la page d'accueil"));
     }
   }
-
 
   onSubmit() {
     this.login();
@@ -55,7 +57,9 @@ export class LoginComponent implements OnInit {
         this.email = '';
         this.password = '';
         console.log('Connexion réussie ! Token :', token);
-        this.router.navigate(['/']).then(() => console.log('Redirection vers la page d\'accueil'));
+        this.router
+          .navigate(['/'])
+          .then(() => console.log("Redirection vers la page d'accueil"));
       },
       error: (err: any) => {
         console.error('Erreur lors de la connexion :', err);
@@ -72,6 +76,8 @@ export class LoginComponent implements OnInit {
   }
 
   goRegister() {
-    this.router.navigate(['/register']).then(() => console.log('Redirection vers la page d\'inscription'));
+    this.router
+      .navigate(['/register'])
+      .then(() => console.log("Redirection vers la page d'inscription"));
   }
 }

@@ -1,12 +1,12 @@
-import {Component, OnInit} from '@angular/core';
-import {HeaderComponent} from '../header/header.component';
-import {FooterComponent} from '../footer/footer.component';
-import {PanelAmisComponent} from '../panel-amis/panel-amis.component';
-import {GameStatus} from '../models/game-status.model';
-import {GameService} from '../services/game.service';
-import {GameStatusComponent} from '../game-status/game-status.component';
-import {PanelAmisService} from '../panel-amis/panel-amis.service';
-import {NgIf} from '@angular/common';
+import { Component, OnInit } from '@angular/core';
+import { HeaderComponent } from '../header/header.component';
+import { FooterComponent } from '../footer/footer.component';
+import { PanelAmisComponent } from '../panel-amis/panel-amis.component';
+import { GameStatus } from '../models/game-status.model';
+import { GameService } from '../services/game.service';
+import { GameStatusComponent } from '../game-status/game-status.component';
+import { PanelAmisService } from '../panel-amis/panel-amis.service';
+import { NgIf } from '@angular/common';
 
 @Component({
   selector: 'app-homepage',
@@ -19,15 +19,18 @@ import {NgIf} from '@angular/common';
     NgIf,
   ],
   templateUrl: './homepage.component.html',
-  styleUrl: './homepage.component.scss'
+  styleUrl: './homepage.component.scss',
 })
-export class HomepageComponent implements OnInit{
+export class HomepageComponent implements OnInit {
   games: GameStatus[] = [];
   onHoldGames: GameStatus[] = [];
   finishedGames: GameStatus[] = [];
   showPanelAmis = true;
 
-  constructor(private gameService: GameService, private panelAmisService: PanelAmisService) {
+  constructor(
+    private gameService: GameService,
+    private panelAmisService: PanelAmisService
+  ) {
     this.panelAmisService.panelAmisVisible$.subscribe((isVisible) => {
       this.showPanelAmis = isVisible;
     });
@@ -44,7 +47,6 @@ export class HomepageComponent implements OnInit{
 
     this.gameService.getFinishedGames().subscribe((games) => {
       this.finishedGames = games;
-    })
+    });
   }
-
 }
