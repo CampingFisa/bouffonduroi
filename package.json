@@ -37,6 +37,7 @@
     "@angular/cli": "^18.2.12",
     "@angular/compiler-cli": "^18.2.12",
     "@semantic-release/changelog": "^6.0.3",
+    "@semantic-release/git": "^10.0.1",
     "@types/bcryptjs": "^2.4.6",
     "@types/jasmine": "~5.1.0",
     "jasmine-core": "~5.4.0",
